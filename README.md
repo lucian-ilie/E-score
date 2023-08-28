@@ -1,4 +1,4 @@
-# E-Score
+# E-score
 
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
@@ -11,7 +11,7 @@
 <br />
 <div align="center">
 
-<h3 align="center">E-Score</h3>
+<h3 align="center">E-score</h3>
 
   <p align="center">
     Aligning Protein Sequences Using Embedding Scores
