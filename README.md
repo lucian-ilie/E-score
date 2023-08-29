@@ -1,4 +1,4 @@
-# E-score
+
 
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
@@ -11,67 +11,111 @@
 <br />
 <div align="center">
 
-<h3 align="center">E-score</h3>
+<h3 align="center"> E-score</h3>
+
 
   <p align="center">
     Aligning Protein Sequences Using Embedding Scores
     <br />
-    <a href="https://github.com/lucian-ilie/E-Score"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
+  
+   
   </p>
 </div>
 
 
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
+The E-score project focuses on computing Global-regular and Global-end-gap-free alignment between any two protein sequences using their embedding vectors computed by stat-of-art pre-trained models. Instead of a fixed score between two pairs of amino acids(like BLOSUM matrices), we use the cosine similarity between the embedding vectors of two amino acids and use it as the context-dependent score.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## Available Models
+| Models | Embedding Dim | Pre-trained on
+| :---         |     :---:     |  :---:     | 
+| ProtT5   | 1024   | Uniref50 |
+| ProtBert     | 1024       | Uniref100 |
+| ProtAlbert  | 4096     | Uniref100 |
+| ProtXLNet    | 1024      |  Uniref100  |
+| ESM1b  | 1280     | Uniref50 |
+| ESM2   | 1280      | Uniref50 |
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-
-### Prerequisites
-<!--
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-<!--  ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+The program is designed to get a fasta file as an input and compute the alignment based on chosen parameters.
+<br />
+By calling the alignment_file_TXT function and passing the needed parameters (which are described below) the output would be a text file containing the computed alignment, its score, and the alignment visualization.
 
+### Parameters and Descriptions
 
+| Parameter | Description |
+| :---         |     :---:     | 
+| saving_add   | the path to the directory for the output   | 
+| seqs_path    | the path of the directory for the FASTA file containing two protein sequences       | 
+| scoring_type  | the embedding method used to produce the embedding vectors; allowed values are: ProtT5, ESM2, ProtBert, ProtAlbert, ESM1b, ProtXLNet     | 
+| alignment_type    | allowed values are Global-regular or Global-end-gap-free     | 
+| gap_penalty   |  default = -1; Recommended Values: -4, -3, -2, -1.5, -1, -0.5    |
+| gap_extension_penalty   |default = -0.2; Recommended Values: -1, -0.8, -0.5, -0.3, -0.2, -0.1      | 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+The output file will be named "FastaFileName_ScoringType_AlignmentType_GapPenalty_GapExtensionPenalty_Alignment.txt".
+### Usage Examples
+
+```python
+saving_add =  "/content/"
+seqs_path = "Test2.fasta"
+scoring = "ProtT5" 
+alignment_type = "Global-regular" 
+gap_penalty = -1
+gap_extension_penalty = -0.2
+
+alignment_file_TXT(saving_add = saving_add , seqs_path = seqs_path, scoring = scoring, alignment_type = alignment_type,
+                      gap_penalty = gap_penalty, gap_extension_penalty = gap_extension_penalty)
+```
+
+Output (Test2_ProtT5_Global-regular_-1_-0.2_Alignment.txt):
+
+```
+Seq 1 
+>gi|464921|sp|P34981|TRFR_HUMAN
+TILLVLIICGLGIVGNIMVVLVVMRTKHMRTPTNCYLVSLAVADLMVLVAAGLPNITDSIYGSWVYGYVGCLCITYLQYLGINASSCSITAFTIERYIAICHPIKAQFLCTFSRAKKIIIFVWAFTSLYCMLWFFLLDLNISTYKDAIVISCGYKISRNYYSPIYLMDFGVFYVVPMILATVLYGFIARILFLNPIPSDPKENSKTWKNDSTHQNTNLNVNTSNRCFNSTVSSRKQVTKMLAVVVILFALLWMPYRTLVVVNSFLSSPFQENWFLLFCRICIYLNSAINPVIYNLMS
+Seq 2 
+>gi|20455271|sp|Q9NSD7|R3R1_HUMAN
+ISVVYWVVCALGLAGNLLVLYLMKSMQGWRKSSINLFVTNLALTDFQFVLTLPFWAVENALDFKWPFGKAMCKIVSMVTSMNMYASVFFLTAMSVTRYHSVASALKSHRTRGHGRGDCCGRSLGDSCCFSAKALCVWIWALAALASLPSAIFSTTVKVMGEELCLVRFPDKLLGRDRQFWLGLYHSQKVLLGFVLPLGIIILCYLLLVRFIADRRAAGTKGGAAVAGGRPTGASARRLSKVTKSVTIVVLSFFLCWLPNQALTTWSILIKFNAVPFSQEYFLCQVYAFPVSVCLAHSNSCLNPVLYCLVR
+
+Alignment Type : Global-regular
+
+Opening Gap Penalty : -1
+Extension Gap Penalty : -0.2
+Scoring System : ProtT5
+Score : 141.1924964427947
+
+Seq 1 : 1     TILLVLIICGLGIVGNIMVVLVVMRTK-HMRTPTNCYLVSLAVADLMVLVAAGLPNITDS    59
+                      C LG  GN  V               N     LA  D               
+Seq 2 : 1     ISVVYWVVCALGLAGNLLVLYLMKSMQGWRKSSINLFVTNLALTDFQFVLTLPFWAVENA    60
+
+Seq 1 : 60    IYGSWVYGYVGCLCITYLQYLGINASSCSITAFTIERYIAICHPIKAQF-----------   108
+                  W  G   C            AS    TA    RY       K              
+Seq 2 : 61    LDFKWPFGKAMCKIVSMVTSMNMYASVFFLTAMSVTRYHSVASALKSHRTRGHGRGDCCG   120
+
+Seq 1 : 109   ----LCTFSRAKKIIIFVWAFTSLYCMLWFFLLDLNISTYKDAIVISCGYKI----SRNY   160
+                        AK      WA   L                          K         
+Seq 2 : 121   RSLGDSCCFSAKALCVWIWALAALASLPSAIFSTTVKVMGEELCLVRFPDKLLGRDRQFW   180
+
+Seq 1 : 161   YSPIYLMDFGVFYVVPMILATVLYGFIARILFLNPIPSDPKENSKTWKNDSTHQNTNLNV   220
+                           V P       Y    R           K                   
+Seq 2 : 181   LGLYHSQKVLLGFVLPLGIIILCYLLLVRFIADRR-AAGTKGG---------------AA   224
+
+Seq 1 : 221   NTSNRCFNSTVSSRKQVTKMLAVVVILFALLWMPYRTLVV---VNSFLSSPF------QE   271
+                  R           VTK    VV  F L W P   L        F   PF        
+Seq 2 : 225   VAGGRPTGASARRLSKVTKSVTIVVLSFFLCWLPNQALTTWSILIKFNAVPFSQEYFLCQ   284
+
+Seq 1 : 272   NWFLLFCRICIYLNSAINPVIYNLMS   297
+                           NS  NPV Y L  
+Seq 2 : 285   VYAFPVSVCLAHSNSCLNPVLYCLVR   310
+```
 
 
 
@@ -84,16 +128,6 @@ Lucian Ilie - ilie@uwo.ca
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
