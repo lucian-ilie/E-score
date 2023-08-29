@@ -28,7 +28,6 @@
 ## About The Project
 The E-score project focuses on computing Global-regular and Global-end-gap-free alignment between any two protein sequences using their embedding vectors computed by stat-of-art pre-trained models. Instead of a fixed score between two pairs of amino acids(like BLOSUM matrices), we use the cosine similarity between the embedding vectors of two amino acids and use it as the context-dependent score.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## Available Models
@@ -58,7 +57,6 @@ By calling the alignment_file_TXT function and passing the needed parameters (wh
 | alignment_type    | allowed values are Global-regular or Global-end-gap-free     | 
 | gap_penalty   |  default = -1; Recommended Values: -4, -3, -2, -1.5, -1, -0.5    |
 | gap_extension_penalty   |default = -0.2; Recommended Values: -1, -0.8, -0.5, -0.3, -0.2, -0.1      | 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 The output file will be named "FastaFileName_ScoringType_AlignmentType_GapPenalty_GapExtensionPenalty_Alignment.txt".
 ### Usage Examples
@@ -117,8 +115,6 @@ Seq 1 : 272   NWFLLFCRICIYLNSAINPVIYNLMS   297
 Seq 2 : 285   VYAFPVSVCLAHSNSCLNPVLYCLVR   310
 ```
 
-
-
 <!-- CONTACT -->
 ## Contact
 
@@ -126,7 +122,7 @@ Sepehr Ashrafzadeh - sashra29@uwo.ca
 <br />
 Lucian Ilie - ilie@uwo.ca
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
