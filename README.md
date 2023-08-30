@@ -28,7 +28,19 @@
 ## About The Project
 The E-score project focuses on computing Global-regular and Global-end-gap-free alignment between any two protein sequences using their embedding vectors computed by stat-of-art pre-trained models. Instead of a fixed score between two pairs of amino acids(like BLOSUM matrices), we use the cosine similarity between the embedding vectors of two amino acids and use it as the context-dependent score.
 
+## System Requirements
+Recommended Python Version: 3.10
+<br />
+Recommended RAM: 24GB
+<br />
+Each of the models needs about 8-12GB of RAM and as the length of the sequences goes up, the needed RAM increases too. 
 
+## Installation
+You can install all of the needed packages using requirement.txt. Python virtual environment is recommended.
+
+```
+pip3 install -r requirement.txt
+```
 
 ## Available Models
 | Models | Embedding Dim | Pre-trained on
@@ -114,6 +126,10 @@ Seq 1 : 272   NWFLLFCRICIYLNSAINPVIYNLMS   297
                            NS  NPV Y L  
 Seq 2 : 285   VYAFPVSVCLAHSNSCLNPVLYCLVR   310
 ```
+
+## Google Colab
+We provided a Google colab containing the [E-score](https://colab.research.google.com/drive/1DJRt6zvfg6Qc-kaTjgRetl6Emmvc11gW?usp=sharing) notebook.
+
 
 <!-- CONTACT -->
 ## Contact
