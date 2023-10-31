@@ -67,8 +67,8 @@ By calling the alignment_file_TXT function and passing the needed parameters (wh
 | seqs_path    | the path of the directory for the FASTA file containing two protein sequences       | 
 | scoring_type  | the embedding method used to produce the embedding vectors; allowed values are: ProtT5, ESM2, ProtBert, ProtAlbert, ESM1b, ProtXLNet     | 
 | alignment_type    | allowed values are Global-regular or Global-end-gap-free     | 
-| gap_penalty   |  default = -1; Recommended Values: -4, -3, -2, -1.5, -1, -0.5    |
-| gap_extension_penalty   |default = -0.2; Recommended Values: -1, -0.8, -0.5, -0.3, -0.2, -0.1      | 
+| gap_penalty   |  default = -0.25; Recommended Values: -1, -0.5, -0.4, -0.3, -0.2, -0.1    |
+| gap_extension_penalty   |default = -0.01; Recommended Values: -0.2, -0.05, -0.04, -0.03, -0.02, -0.01      | 
 
 The output file will be named "FastaFileName_ScoringType_AlignmentType_GapPenalty_GapExtensionPenalty_Alignment.txt".
 ### Usage Examples
