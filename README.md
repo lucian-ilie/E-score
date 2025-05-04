@@ -28,7 +28,9 @@
 ## About The Project
 The E-score project enables computation of local, global-regular, and semi-global alignments between any two protein sequences using their embedding vectors derived from state-of-the-art pre-trained models. Unlike traditional methods that rely on fixed substitution scores (e.g., BLOSUM matrices), E-score uses cosine similarity between embedding vectors of amino acids, allowing for context-dependent scoring. The alignment algorithms are adaptations of classical dynamic programming approaches tailored for protein sequence analysis.
 <br />
+<br />
 To help you get started, we provide a simple usage example in e_score_quick_start.py. For running multiple examples from an example file within a given domain, see the full_test_example directory. Scripts for analyzing results and computing sequence distances are available in analyzing_results and distances_and_extracting_local_alignments.py, respectively.
+<br />
 <br />
 Global alignment examples can be constructed from any multiple sequence alignment (MSA) by selecting sequence pairs within the same MSA. Creating local examples requires more care; for convenience, we provide all of our curated local alignment examples, described in the Protein Embeddings and Local Alignments paper, in the example_data directory.
 
