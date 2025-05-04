@@ -139,13 +139,12 @@ We provided a web server containing the [E-score](https://e-score.csd.uwo.ca) co
 <!-- CONTACT -->
 ## Contact
 
-Sepehr Ashrafzadeh - sashra29@uwo.ca
 <br />
 Lucian Ilie - ilie@uwo.ca
-
-
-
-
+<br />
+Julia Malec - jmalec@uwo.ca
+<br />
+Sepehr Ashrafzadeh - sashra29@uwo.ca
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
