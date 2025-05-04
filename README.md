@@ -11,7 +11,7 @@
 <br />
 <div align="center">
 
-<h3 align="center"> E-score</h3>
+<h1 align="center"> E-score</h1>
 
 
   <p align="center">
@@ -26,7 +26,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The E-score project focuses on computing Global-regular and Global-end-gap-free alignment between any two protein sequences using their embedding vectors computed by stat-of-art pre-trained models. Instead of a fixed score between two pairs of amino acids(like BLOSUM matrices), we use the cosine similarity between the embedding vectors of two amino acids and use it as the context-dependent score.
+The E-score project focuses on computing Local, Global-regular and Semi-Global alignment between any two protein sequences using their embedding vectors computed by stat-of-art pre-trained models. Instead of a fixed score between two pairs of amino acids(like BLOSUM matrices), we use the cosine similarity between the embedding vectors of two amino acids and use it as the context-dependent score. 
 
 ## System Requirements
 Recommended Python Version: 3.10
@@ -43,8 +43,12 @@ pip3 install -r requirement.txt
 ```
 
 ## Available Models
+The default model we found to work best is Ankh. However, we also provide instructions for using other models such as ProtT5, ProtBert, ProtAlbert, ProtXLNet, ESM1b, and ESM2—all of which are assumed to be downloaded locally from Hugging Face. This setup is ideal for server environments where downloading models at runtime may pose security risks. That said, any properly installed embedding model can be easily integrated into the pipeline. See initalizing_models_and_getting_embs.PY
+
+
 | Models | Embedding Dim | Pre-trained on
 | :---         |     :---:     |  :---:     | 
+| Ankh-   | 1024   | Uniref50 |
 | ProtT5   | 1024   | Uniref50 |
 | ProtBert     | 1024       | Uniref100 |
 | ProtAlbert  | 4096     | Uniref100 |
