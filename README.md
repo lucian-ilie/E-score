@@ -132,8 +132,8 @@ Seq 2 : 360   TGDASKDPITIVPAE---DGSGAGAAV   383
 
 ```
 
-## Google Colab
-We provided a Google colab containing the [E-score](https://colab.research.google.com/drive/18F_S2sthFDZMdcp3s77uodCMMN77aoFJ?usp=sharing) notebook.
+## E-Score Web Server
+We provided a web server containing the [E-score](https://e-score.csd.uwo.ca).
 
 
 <!-- CONTACT -->
