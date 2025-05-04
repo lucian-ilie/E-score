@@ -26,7 +26,11 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The E-score project focuses on computing Local, Global-regular and Semi-Global alignment between any two protein sequences using their embedding vectors computed by stat-of-art pre-trained models. Instead of a fixed score between two pairs of amino acids(like BLOSUM matrices), we use the cosine similarity between the embedding vectors of two amino acids and use it as the context-dependent score. 
+The E-score project enables computation of local, global-regular, and semi-global alignments between any two protein sequences using their embedding vectors derived from state-of-the-art pre-trained models. Unlike traditional methods that rely on fixed substitution scores (e.g., BLOSUM matrices), E-score uses cosine similarity between embedding vectors of amino acids, allowing for context-dependent scoring. The alignment algorithms are adaptations of classical dynamic programming approaches tailored for protein sequence analysis.
+<br />
+To help you get started, we provide a simple usage example in e_score_quick_start.py. For running multiple examples from an example file within a given domain, see the full_test_example directory. Scripts for analyzing results and computing sequence distances are available in analyzing_results and distances_and_extracting_local_alignments.py, respectively.
+<br />
+Global alignment examples can be constructed from any multiple sequence alignment (MSA) by selecting sequence pairs within the same MSA. Creating local examples requires more care; for convenience, we provide all of our curated local alignment examples, described in the Protein Embeddings and Local Alignments paper, in the example_data directory.
 
 ## System Requirements
 Recommended Python Version: 3.10
@@ -42,19 +46,9 @@ You can install all of the needed packages using requirement.txt. Python virtual
 pip3 install -r requirement.txt
 ```
 
-## Available Models
-The default model we found to work best is Ankh. However, we also provide instructions for using other models such as ProtT5, ProtBert, ProtAlbert, ProtXLNet, ESM1b, and ESM2—all of which are assumed to be downloaded locally from Hugging Face. This setup is ideal for server environments where downloading models at runtime may pose security risks. That said, any properly installed embedding model can be easily integrated into the pipeline. See initalizing_models_and_getting_embs.PY
+## Protein Language Models
+The default model we found to work best is Ankh. However, we also provide instructions for using other models such as ProtT5, ProtBert, ProtAlbert, ProtXLNet, ESM1b, and ESM2—all of which are assumed to be downloaded locally from Hugging Face. This setup is ideal for server environments where downloading models at runtime may pose security risks. That said, any properly installed embedding model can be easily integrated into the pipeline. See initalizing_models_and_getting_embs.py. 
 
-
-| Models | Embedding Dim | Pre-trained on
-| :---         |     :---:     |  :---:     | 
-| Ankh-   | 1024   | Uniref50 |
-| ProtT5   | 1024   | Uniref50 |
-| ProtBert     | 1024       | Uniref100 |
-| ProtAlbert  | 4096     | Uniref100 |
-| ProtXLNet    | 1024      |  Uniref100  |
-| ESM1b  | 1280     | Uniref50 |
-| ESM2   | 1280      | Uniref50 |
 
 
 <!-- USAGE EXAMPLES -->
@@ -75,66 +69,7 @@ By calling the alignment_file_TXT function and passing the needed parameters (wh
 | gap_extension_penalty   |default = -0.01; Recommended Values: -0.2, -0.05, -0.04, -0.03, -0.02, -0.01      | 
 
 The output file will be named "FastaFileName_ScoringType_AlignmentType_GapPenalty_GapExtensionPenalty_Alignment.txt".
-### Usage Examples
 
-```python
-saving_add =  "/content/"
-seqs_path = "TestOne.fasta"
-scoring = "ProtT5" 
-alignment_type = "Global-regular" 
-gap_penalty = -0.25
-gap_extension_penalty = -0.01
-
-alignment_file_TXT(saving_add = saving_add , seqs_path = seqs_path, scoring = scoring, alignment_type = alignment_type,
-                      gap_penalty = gap_penalty, gap_extension_penalty = gap_extension_penalty)
-```
-
-Output (TestOne_ProtT5_Global-regular_-0.25_-0.01_Alignment.txt):
-
-```
-Seq 1 
->gi|150273654|gb|EDN00782.1|
-TGVDLGTAYIVLVVLDEENNPVACEKQAAQVLRDGVVVDYTGALRIVRELKEKLEARLGTELVNCAIAMPAGTESSVRTHQYVAEGAGFEVTEILDEPSAANAIYQIENGVVVDIGGGTTGLAMLKDGVVVQTEDEPTGGTHLSLVLAGNYHISFAEAEAIKQDYARHREILPVVRPVLEKMASIVKRYVSQSDVDTIYLCGGTCCLTGIEQVFEKVTGIHTVKPANPFLVTPTGIAM
-Seq 2 
->gi|168988865|pdb|3B8A|X
-LAIDLGGTNLRVVLVKLSGNHTFDTTQSKYKLPHDMRTTKHQEELWSFIADSLKDFMVEQELLNTKDTLPLGFTFSYPASQNKINEGILQRWTKGFDIPNVEGHDVVPLLQNEISKRELPIEIVALINDTVGTLIASYYTDPETKMGVIFGTGVNGAFYDVVSDIEKLEGKLADDIPSNSPMAINCEYGSFDNEHLVLPRTKYDVAVDEQSPRPGQQAFEKMTSGYYLGELLRLVLLELNEKGLMLKDQDLSKLKQPYIMDTSYPARIEDDPFENLEDTDDIFQKDFGVKTTLPERKLIRRLCELIGTRAARLAVCGIAAICQKRGYKTGHIAADGSVYNKYPGFKEAAAKGLRDIYGWTGDASKDPITIVPAEDGSGAGAAV
-
-Alignment Type : Global-regular
-
-Opening Gap Penalty : -0.25
-Extension Gap Penalty : -0.01
-Scoring System : ProtT5
-Score : 71.37376693785201
-
-Seq 1 : 1     TGVDLGTAY--IVLVVLDEENNP-VACEKQAAQVLRDGVVVDYTGALRIVRELKEKLEAR    57
-                 DLG      VLV L           K                               
-Seq 2 : 1     LAIDLGGTNLRVVLVKLSGNHTFDTTQSKYKL-PHDMRTTKHQEELWSFIADSLKDFMVE    59
-
-Seq 1 : 58    LGT----ELVNCAIA--MPAGTE----------------------SSVRTHQYVAEG--A    87
-                                PA                           V   Q        
-Seq 2 : 60    QELLNTKDTLPLGFTFSYPASQNKINEGILQRWTKGFDIPNVEGHDVVPLLQNEISKREL   119
-
-Seq 1 : 88    GFEVTEILDEPSA---ANAIYQIENGVVVDIGGGTTGLAMLKDGVV--------------   130
-                E             A      E    V  G G  G                       
-Seq 2 : 120   PIEIVALINDTVGTLIASYYTDPETKMGVIFGTGVNGAFYDVVSDIEKLEGKLADDIPSN   179
-
-Seq 1 : 131   ------------------------------------VQTEDEPTGGTHLS-------LVL   147
-                                                   Q     T G  L        L L
-Seq 2 : 180   SPMAINCEYGSFDNEHLVLPRTKYDVAVDEQSPRPGQQAFEKMTSGYYLGELLRLVLLEL   239
-
-Seq 1 : 148   AGN---------------YHISFAEAEAIKQD---------------------YARHREI   171
-                                Y         I  D                           I
-Seq 2 : 240   NEKGLMLKDQDLSKLKQPYIMDTSYPARIEDDPFENLEDTDDIFQKDFGVKTTLPERKLI   299
-
-Seq 1 : 172   LPVVRPVLEKMA----SIVKRYVSQSDVDT--IYLCGG-TCCLTGIEQVFEK----VTG-   219
-                         A                 T  I   G       G      K      G 
-Seq 2 : 300   RRLCELIGTRAARLAVCGIAAICQKRGYKTGHIAADGSVYNKYPGFKEAAAKGLRDIYGW   359
-
-Seq 1 : 220   --------IHTVKPANPFLVTPTGIAM   238
-                      I  V           G A 
-Seq 2 : 360   TGDASKDPITIVPAE---DGSGAGAAV   383
-
-```
 
 ## E-Score Web Server
 We provided a web server containing the [E-score](https://e-score.csd.uwo.ca) code.
