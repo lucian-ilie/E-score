@@ -133,7 +133,7 @@ Seq 2 : 360   TGDASKDPITIVPAE---DGSGAGAAV   383
 ```
 
 ## E-Score Web Server
-We provided a web server containing the [E-score](https://e-score.csd.uwo.ca).
+We provided a web server containing the [E-score](https://e-score.csd.uwo.ca) code.
 
 
 <!-- CONTACT -->
