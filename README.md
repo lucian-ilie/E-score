@@ -54,12 +54,7 @@ The default model we found to work best is Ankh. However, we also provide instru
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
-The program is designed to get a fasta file as an input and compute the alignment based on chosen parameters.
-<br />
-By calling the alignment_file_TXT function and passing the needed parameters (which are described below) the output would be a text file containing the computed alignment, its score, and the alignment visualization.
-
-### Parameters and Descriptions
+## Parameters and Descriptions
 
 | Parameter | Description |
 | :---         |     :---:     | 
