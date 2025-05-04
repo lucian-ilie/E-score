@@ -70,7 +70,6 @@ By calling the alignment_file_TXT function and passing the needed parameters (wh
 | gap_penalty   |  default = -0.25; Recommended Values: -1, -0.5, -0.4, -0.3, -0.2, -0.1    |
 | gap_extension_penalty   |default = -0.01; Recommended Values: -0.2, -0.05, -0.04, -0.03, -0.02, -0.01      | 
 
-The output file will be named "FastaFileName_ScoringType_AlignmentType_GapPenalty_GapExtensionPenalty_Alignment.txt".
 
 
 ## E-Score Web Server
