@@ -49,7 +49,7 @@ pip3 install -r requirement.txt
 ```
 
 ## Protein Language Models
-The default model we found to work best is Ankh. However, we also provide instructions for using other models such as ProtT5, ProtBert, ProtAlbert, ProtXLNet, ESM1b, and ESM2—all of which are assumed to be downloaded locally from Hugging Face. This setup is ideal for server environments where downloading models at runtime may pose security risks. That said, any properly installed embedding model can be easily integrated into the pipeline. See initalizing_models_and_getting_embs.py. 
+The default model we found to work best is Ankh. However, we also provide instructions for using other models such as ProtT5, ProtBert, ProtAlbert, ProtXLNet, ESM1b, and ESM2, all of which are assumed to be downloaded locally from Hugging Face. This setup is ideal for server environments where downloading models at runtime may pose security risks. That said, any properly installed embedding model can be easily integrated into the pipeline. See initalizing_models_and_getting_embs.py. 
 
 
 
