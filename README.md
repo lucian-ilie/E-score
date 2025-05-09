@@ -59,33 +59,31 @@ Given a pair of protein sequences, this file can align them locally, globally, o
 
 
 | Parameter | Description |
-| protein_seq1       |      | 
-| protein_seq2   |  | 
-| gap_open   |       | 
-| gap_extension |   | 
-| alignment_type    |   | 
-| int_shift  |   |
+| protein_seq1 | string representing the first protein to be aligned | 
+| protein_seq2 | string representing the second protein to be aligned | 
+| gap_open | penatly to open a gap during DP alignment, (recommended to use around -0.25 for global, and -1 for local) |
+| gap_extension | penatly to open a gap during DP alignment, (recommended to use around -0.01 for global, and -0.1 for local) | 
+| alignment_type | can be 'local', 'global' or 'semi-global' | 
+| int_shift | how much to shift the cosine similarity value (recommended to use is 0 to -2) |
 <br />
 | Return Value | Description |
-| aligned_seq1       |      | 
-| aligned_seq2   |  | 
-| max_score |  | 
+| aligned_seq1 | string representing the alignment of the first protein | 
+| aligned_seq2 | string representing the alignment of the second protein | 
+| max_score | score for the optimal alignment, as definded in DP alignment | 
 
 ## Parameters and Descriptions: full_test_example
 
-Given an example.csv file, with the same columns as those in the CSVs from the example_data directory, full_test_example demonstrates how to run all examples sequentially and save the results in formats compatible with the analysis scripts we provide.
+Given an example.csv file, with the same columns as those in the CSVs from the example_data directory, full_test_example demonstrates how to run all examples sequentially and save the results in formats compatible with the analysis scripts we provide. This example is set up for local alignment, but can be easily modifed to use other alignment types as defined in e_score_quick_start.py
 
 | Parameter | Description |
-| example_id       |      | 
-| parms   |  | 
-| model and tokenizer  |       | 
-| gap_open |   | 
-| gap_extension    |   | 
-| shift  |   |
+| example_id | first part of test folder's name/example file's name| 
+| parms | CSV file that has the gap parameters| 
+| model and tokenizer | can initalize any embedding model here | 
+| gap_open | penatly to open a gap during DP alignment| 
+| gap_extension | penatly to extend a gap during DP alignment| 
 <br />
 
 Each alignment test is saved to its own text file, and a single distances.csv file is generated to collect the distances from all tests.
-
 
 
 
