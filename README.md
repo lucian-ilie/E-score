@@ -58,7 +58,7 @@ The model we found to work best is Ankh. However, we also provide instructions f
 Given a pair of protein sequences, this file can align them locally, globally, or semi-globally. Within the main function: 
 
 
-| Parameter | Description |
+** | Parameter | Description | **
 <br />
 | protein_seq1 | string representing the first protein to be aligned | 
 <br />
@@ -73,7 +73,7 @@ Given a pair of protein sequences, this file can align them locally, globally, o
 | int_shift | how much to shift the cosine similarity value (recommended to use is 0 to -2) |
 <br />
 <br />
-| Return Value | Description |
+** | Return Value | Description | **
 <br />
 | aligned_seq1 | string representing the alignment of the first protein | 
 <br />
@@ -86,7 +86,7 @@ Given a pair of protein sequences, this file can align them locally, globally, o
 
 Given an example.csv file, with the same columns as those in the CSVs from the example_data directory, full_test_example demonstrates how to run all examples sequentially and save the results in formats compatible with the analysis scripts we provide. This example is set up for local alignment, but can be easily modifed to use other alignment types as defined in e_score_quick_start.py
 
-| Parameter | Description |
+** | Parameter | Description | **
 <br />
 | example_id | first part of test folder's name/example file's name| 
 <br />
