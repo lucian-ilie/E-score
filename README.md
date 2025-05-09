@@ -72,10 +72,8 @@ Given a pair of protein sequences, this file can align them locally, globally, o
 <br />
 | int_shift | how much to shift the cosine similarity value (recommended to use is 0 to -2) |
 <br />
-<br />
 
 **| Return Value | Description |**
-
 <br />
 | aligned_seq1 | string representing the alignment of the first protein | 
 <br />
