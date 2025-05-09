@@ -98,7 +98,6 @@ Given an example.csv file, with the same columns as those in the CSVs from the e
 <br />
 | gap_extension | penatly to extend a gap during DP alignment| 
 <br />
-<br />
 
 Each alignment test is saved to its own text file, and a single distances.csv file is generated to collect the distances from all tests.
 
