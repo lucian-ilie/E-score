@@ -107,7 +107,7 @@ Each alignment test is saved to its own text file, and a single distances.csv fi
 We provided a web server containing the [E-score](https://e-score.csd.uwo.ca) code.
 
 
-## Reference:
+## Reference
  Ashrafzadeh, S., Golding, G.B., Ilie, S. and Ilie, L., 2024. Scoring alignments by embedding vector similarity. Briefings in Bioinformatics, 25(3), p.bbae178.
 
 
