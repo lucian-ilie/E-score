@@ -252,15 +252,14 @@ def get_h(x1 , x2 , type = "ssp"):
 
 #this function computes the SSP distance (Jacard) given the homolgy sets for the sequences to be compared
 def d_ssp(H_A , H_B):
-  up = 0 #accumulate the number of common elements between both sequences, where neither is - (intersection of homology sets)
-  down = 0 #number of unique elements between both sequences, where neither is -
+  up = 0 #accumulate the number of common elements between both sequences
+  down = 0 #number of unique elements between both sequences
   for i in range(len(H_A)):
     for j in range(len(H_A[i])):
-      if H_A[i][j] == "-" or H_B[i][j] == "-":
-        down += len(set([H_A[i][j]]).union([H_B[i][j]]))
-      else:
+        
         up += len(set([H_A[i][j]]).intersection([H_B[i][j]]))
         down += len(set([H_A[i][j]]).union([H_B[i][j]]))
+      
   #if all postions have gaps, there is nothing to compare, this is the worst case alignment
   if down == 0:
     return 1
