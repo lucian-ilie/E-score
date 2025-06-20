@@ -370,7 +370,7 @@ def d_d(algn1, algn2):
         tmp = 0
         for j in range(len(p2a1_no_gap_idxs)):
             tmp += abs((p1a1_no_gap_idxs[i] - p2a1_no_gap_idxs[j]) - (p1a2_no_gap_idxs[i] - p2a2_no_gap_idxs[j]))
-            distance += tmp
+        distance += tmp
 
     n = len(p1a1.replace("-" , ""))
     m = len(p2a1.replace("-" , ""))
