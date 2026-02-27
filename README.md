@@ -49,7 +49,7 @@ pip3 install -r requirement.txt
 ```
 
 ## Protein Language Models
-The model we found to work best is Ankh. However, we also provide instructions for using other models such as ProtT5, ProtBert, ProtAlbert, ProtXLNet, ESM1b, and ESM2, all of which are assumed to be downloaded locally from Hugging Face. This setup is ideal for server environments where downloading models at runtime may pose security risks. That said, any properly installed embedding model can be easily integrated into the pipeline. See initalizing_models_and_getting_embs.py. 
+The model we found to work best is Ankh. However, we also provide instructions for using other models such as ProtT5, ProstT5, ProtBert, ProtAlbert, ProtXLNet, ESM1b, and ESM2, all of which are assumed to be downloaded locally from Hugging Face. This setup is ideal for server environments where downloading models at runtime may pose security risks. That said, any properly installed embedding model can be easily integrated into the pipeline. See initalizing_models_and_getting_embs.py. 
 
 
 
@@ -107,7 +107,7 @@ Each alignment test is saved to its own text file, and a single distances.csv fi
 We provided a web server containing the [E-score](https://e-score.csd.uwo.ca) code.
 
 
-## Reference
+## References
  Ashrafzadeh, S., Golding, G.B., Ilie, S. and Ilie, L., 2024. Scoring alignments by embedding vector similarity. Briefings in Bioinformatics, 25(3), p.bbae178.
 
  Julia Malec, G. Brian Golding, Lucian Ilie. December 2025. Protein Embeddings and Local Alignment. Computational and Structural Biotechnology.  https://doi.org/10.1016/j.csbj.2025.12.002
