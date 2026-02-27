@@ -110,6 +110,8 @@ We provided a web server containing the [E-score](https://e-score.csd.uwo.ca) co
 ## Reference
  Ashrafzadeh, S., Golding, G.B., Ilie, S. and Ilie, L., 2024. Scoring alignments by embedding vector similarity. Briefings in Bioinformatics, 25(3), p.bbae178.
 
+ Julia Malec, G. Brian Golding, Lucian Ilie. December 2025. Protein Embeddings and Local Alignment. Computational and Structural Biotechnology.  https://doi.org/10.1016/j.csbj.2025.12.002
+
 
 <!-- CONTACT -->
 ## Contact
