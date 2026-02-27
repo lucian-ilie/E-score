@@ -1,0 +1,2 @@
+This directory contains the code and results for the dot plots in the Ankh-score produces better sequence alignments than AlphaFold3 manuscript. 
+Specifically, here is shows how to generate the dot plots for the (reduced) BB dataset. 
