@@ -547,7 +547,7 @@ def d_cc(first_align , second_align):
     return ((1 / (4 * n * m)) * total_d)
 
 
-
+#Distance 6: d_ia inter-alignment distance
 #helper functions for d_ia
 def get_index_of_alignment(seq1,seq2):
 
