@@ -116,7 +116,6 @@ We provided a web server containing the [E-score](https://e-score.csd.uwo.ca) co
 <!-- CONTACT -->
 ## Contact
 
-<br />
 Julia Malec - jmalec@uwo.ca
 <br />
 Lucian Ilie - ilie@uwo.ca
