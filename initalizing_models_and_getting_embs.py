@@ -44,7 +44,8 @@ def get_embs_Ankh(seq, ankh_model, tokenizer):
     return sequence_embedding
 
 
-#2) PROT_T5
+#2) PROT_T5 
+# same for PROST_T5, just change model path
 def ProtT5_initialize():
 
     ProtT5 = T5EncoderModel.from_pretrained("/change/path/to/model", local_files_only=True)
@@ -193,6 +194,7 @@ def main():
     print("\n")
 
     #protT5
+    # same for PROST_T5, just change model path
     model, tokenizer = ProtT5_initialize()
     emb1 = get_embs_T5(seq1, model, tokenizer).cpu().numpy()
     emb2 = get_embs_T5(seq2, model, tokenizer).cpu().numpy()
