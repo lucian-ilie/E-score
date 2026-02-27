@@ -113,6 +113,7 @@ We provided a web server containing the [E-score](https://e-score.csd.uwo.ca) co
  Julia Malec, G. Brian Golding, Lucian Ilie. December 2025. Protein Embeddings and Local Alignment. Computational and Structural Biotechnology.  https://doi.org/10.1016/j.csbj.2025.12.002
 
  Julia Malec, Karina Rusen, G. Brian Golding, Lucian Ilie. Pre-Print. Ankh-score produces better sequence alignments than AlphaFold3. Proteins: Structure, Function, and Bioinformatics. doi.org/10.1101/2025.09.03.674029
+ 
 
 
 <!-- CONTACT -->
