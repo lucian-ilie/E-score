@@ -547,6 +547,128 @@ def d_cc(first_align , second_align):
     return ((1 / (4 * n * m)) * total_d)
 
 
+
+#helper functions for d_ia
+def get_index_of_alignment(seq1,seq2):
+
+    if len(seq1) != len(seq2):
+        return None
+
+    seq1 = list(seq1)
+    seq2 = list(seq2)
+
+    alignment = []
+    row = 0
+    col = 0
+
+    for i in range (0,len(seq1)):
+        
+        #align seq1 and seq2
+        if (seq1[i] != "-") and (seq2[i] != "-"):
+            row = row + 1
+            col = col + 1
+            index = (row,col)
+        #gap in seq 2
+        elif (seq1[i] != "-"):
+            col = col + 1
+            index = (row,col)
+        #gap in seq 1
+        else: 
+            row = row + 1
+            index = (row,col)
+        
+        alignment.append(index)
+
+    return alignment
+
+
+#compute the proper diagonals 
+def compute_diagonal_values(alignment):
+
+    diagonals = []
+
+    row = 0
+    col = 0
+    diagonal = 0
+
+    for element in alignment:
+
+        current_row = element[0]
+        current_col = element[1]
+
+        #move diagonally
+        if (current_row == row + 1) and (current_col == col + 1):
+            diagonals.append(diagonal)
+            diagonals.append(diagonal)
+
+            row = current_row
+            col = current_col
+        
+        #moving left
+        elif (current_col == col + 1):
+            diagonal = diagonal + 1
+            diagonals.append(diagonal)
+
+            row = current_row
+            col = current_col
+        
+        #moving down
+        else: 
+            diagonal = diagonal - 1
+            diagonals.append(diagonal)
+            row = current_row
+            col = current_col
+        
+    return diagonals
+
+#get aboslute difference between two lists 
+def absolute_of_two_lists(list1, list2):
+
+    if len(list1)!= len(list2):
+        print("lists need to be the same length")
+        return None
+
+    total = 0
+
+    for i in range (0,len(list1)):
+
+        val_1 = list1[i]
+        val_2 = list2[i]
+
+        abs_diff = abs(val_1 - val_2)
+        total = total + abs_diff
+    
+    return total
+
+
+def d_ia(computed_align, ref_align):
+
+    #getting all the sequences
+    align1 = computed_align[0]
+    align2 = computed_align[1]
+
+    m = len(align1.replace("-",""))
+    n = len(align2.replace("-",""))
+
+    ref1 = ref_align[0]
+    ref2 = ref_align[1]
+
+    computed_align_indices = get_index_of_alignment(align1, align2)
+    ref_align_indices = get_index_of_alignment(ref1,ref2)
+
+    #get the diagonals
+    computed_align_diagonals = compute_diagonal_values(computed_align_indices)
+    ref_align_diagonals = compute_diagonal_values(ref_align_indices)
+
+
+    #get the absolute difference
+    d_ia = absolute_of_two_lists(computed_align_diagonals, ref_align_diagonals)
+
+    d_ia = d_ia/(2*m*n)
+    
+    return d_ia
+
+
 #example
 def main():
 
@@ -566,18 +688,21 @@ def main():
     print("\n")
 
     #get distances between reference alignment and extracted alignment
+    #this step can be skipped for global alignments
     alignment_extracted = [algn1_final, algn2_final]
     reference_alignment = [reference_alignment_seq1, reference_alignment_seq2]
 
     d_SSP, d_SEQ , d_POS = get_3_dists(alignment_extracted, reference_alignment)
     d_CC = d_cc(alignment_extracted, reference_alignment)
     d_D = d_d(alignment_extracted, reference_alignment)
+    d_IA = d_ia(alignment_extracted, reference_alignment)
 
     print("SSP: " + str(d_SSP))
     print("SEQ: " + str(d_SEQ))
     print("POS: " + str(d_POS))
     print("CC: " + str(d_CC))
     print("D: " + str(d_D))
+    print("IA: " + str(d_IA))
 
 
 
