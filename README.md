@@ -64,9 +64,9 @@ Given a pair of protein sequences, this file can align them locally, globally, o
 <br />
 | protein_seq2 | string representing the second protein to be aligned | 
 <br />
-| gap_open | penatly to open a gap during DP alignment, (recommended to use around -0.25 for global, and -1 for local) |
+| gap_open | penatly to open a gap during DP alignment, (recommended to use around -1) |
 <br />
-| gap_extension | penatly to open a gap during DP alignment, (recommended to use around -0.01 for global, and -0.1 for local) | 
+| gap_extension | penatly to open a gap during DP alignment, (recommended to use around -0.1) | 
 <br />
 | alignment_type | can be 'local', 'global' or 'semi-global' | 
 <br />
