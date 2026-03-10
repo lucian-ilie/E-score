@@ -108,11 +108,11 @@ We provided a web server containing the [E-score](https://e-score.csd.uwo.ca) co
 
 
 ## References
- Ashrafzadeh, S., Golding, G.B., Ilie, S. and Ilie, L., 2024. Scoring alignments by embedding vector similarity. Briefings in Bioinformatics, 25(3), p.bbae178. https://doi.org/10.1093/bib/bbae178
+ S. Ashrafzadeh, G.B Golding, and and L. Ilie. 2024. Scoring alignments by embedding vector similarity. Briefings in Bioinformatics, 25(3), p.bbae178. https://doi.org/10.1093/bib/bbae178
  
- J. Malec, G.B Golding, and L. Ilie. Protein embeddings and local alignments. Computational and Structural Biotechnology Journal, 31:24–37, 2026. https://doi.org/10.1016/j.csbj.2025.12.002
+ J. Malec, G.B. Golding, and L. Ilie. 2025. Protein embeddings and local alignments. Computational and Structural Biotechnology Journal, 31:24–37, 2026. https://doi.org/10.1016/j.csbj.2025.12.002
 
- J Malec, K Rusen, G.B Golding, and and L. Ilie. Pre-Print. Ankh-score produces better sequence alignments than AlphaFold3. https://doi.org/10.1101/2025.09.03.674029
+ J. Malec, K. Rusen, G.B. Golding, and and L. Ilie. 2026. Pre-Print. Ankh-score produces better sequence alignments than AlphaFold3. https://doi.org/10.1101/2025.09.03.674029
 
 
 
