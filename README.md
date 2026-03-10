@@ -112,7 +112,7 @@ We provided a web server containing the [E-score](https://e-score.csd.uwo.ca) co
  
  J. Malec, G.B. Golding, and L. Ilie. 2025. Protein embeddings and local alignments. Computational and Structural Biotechnology Journal, 31:24–37, 2026. https://doi.org/10.1016/j.csbj.2025.12.002
 
- J. Malec, K. Rusen, G.B. Golding, and and L. Ilie. 2026. Pre-Print. Ankh-score produces better sequence alignments than AlphaFold3. https://doi.org/10.1101/2025.09.03.674029
+ J. Malec, K. Rusen, G.B. Golding, and L. Ilie. 2026. Pre-Print. Ankh-score produces better sequence alignments than AlphaFold3. https://doi.org/10.1101/2025.09.03.674029
 
 
 
