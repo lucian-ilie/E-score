@@ -650,7 +650,7 @@ def get_d_P(first_align, second_align , trace = False):
     # print(Q_2[start_letter_idx + 1 :])
     # print(found_char_right_idx)
 
-    found_char_left_idx = Q_2[: start_letter_idx].find(target_letter)
+    found_char_left_idx = Q_2[: start_letter_idx].rfind(target_letter)
     # print(Q_2[: start_letter_idx])
     # print(found_char_left_idx)
 
